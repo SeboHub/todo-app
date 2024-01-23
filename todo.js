@@ -60,3 +60,5 @@ function formatiereZeitstempel(isoString) {
     let jahr = datum.getFullYear().toString().slice(2);
     return `${stunden}:${minuten} - ${tag}.${monat}.${jahr}`;
 }
+
+
