@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meine Todo App</title>
+</head>
+<body>
+    <div class="app-container"> <!-- Wrapper für die gesamte App -->
+        <h1>Meine To-Do-Liste</h1>
+        <br>
+        <div class="input-button-container">
+            <input type="text" id="neueAufgabe" placeholder="Neue Notiz hinzufügen">
+            <button id="hinzufuegenButton">Hinzufügen</button> <!-- ID hinzugefügt -->
+        </div>
+        <ul id="todoListe">
+        </ul>
+        <div class="button-container"> <!-- Container für die Buttons -->
+            <button id="showDogButton">Zeige Hundebild</button> <!-- Hier ist der Button für das Hundebild -->
+            <!-- Hier fügen wir einen Button hinzu, um die API aufzurufen -->
+            <button onclick="getDataFromApi()">Daten von API abrufen</button>
+        </div>
+        <div class="hundebild-container"> <!-- Container für das Hundebild -->
+            <h2></h2>
+            <img id="dogImage" src="" alt="Hundebild">
+        </div>
+    </div>
+    <script src="todo.js"></script>
+    <script src="dog.js"></script> <!-- JavaScript-Datei für Hundebilder -->
+    <!-- Hier fügen wir ein Skript ein, um die Daten von der API abzurufen -->
+    <script>
+        // Definiere die URL deiner API
+        var apiUrl = 'https://lfktzszvp3.execute-api.eu-central-1.amazonaws.com/default/get_item?UserID=1000';
+
+        // Funktion zum Abrufen der Daten von der API
+        function getDataFromApi() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Daten verarbeiten und in die Aufgabenliste einfügen
+                    var todoListe = document.getElementById('todoListe');
+                    todoListe.innerHTML = ''; // Vorhandene Liste leeren
+                    var tasks = data.Tasks || [];
+                    tasks.forEach(task => {
+                        var listItem = document.createElement('li');
+                        listItem.textContent = task;
+                        todoListe.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Fehler beim Abrufen der Daten:', error));
+        }
+    </script>
+</body>
+</html>

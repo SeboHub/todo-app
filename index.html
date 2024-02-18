@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Meine Todo App</title>
+</head>
+<body>
+    <div class="app-container"> <!-- Wrapper für die gesamte App -->
+        <h1 id="todoÜberschrift">Meine To-Do-Liste</h1>
+        <br>
+        <div class="input-button-container">
+            <input type="text" id="neueAufgabe" placeholder="Neue Notiz hinzufügen">
+            <button id="hinzufuegenButton">Hinzufügen</button> <!-- ID hinzugefügt -->
+        </div>
+        <ul id="todoListe"></ul>
+
+        <!-- (Container) Bereich für die Datenabfrage hinzufügen -->
+        <div class="data-fetch-section">
+            <br>
+            <br>
+            <input type="text" id="userIdInput" placeholder="UserID eingeben">
+            <button onclick="aufgabenLaden()">Aufgaben laden</button>
+            <input type="text" id="taskInput" placeholder="Neue Aufgabe eingeben">
+            <button onclick="aufgabeHinzufuegen()">Task hinzufügen</button>
+            <input type="text" id="todoIdInput" placeholder="TodoID eingeben (optional)">
+            <button id="resetButton" class="reset-button">Daten zurücksetzen</button>
+            <div id="result"></div>
+            <ol id="apiTodoListe"></ol>
+            <br>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+    <script src="todo2.js"></script>
+</body>
+</html>
