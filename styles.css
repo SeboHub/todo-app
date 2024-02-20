@@ -5,41 +5,9 @@
     box-sizing: border-box;
 }
 
-@keyframes gradientBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-#todoÜberschrift {
-    font-size: 2.5rem; /* Größe der Überschrift */
-    text-align: center; /* Zentriert den Text */
-    background: -webkit-linear-gradient(45deg, #420445fb, #0f0c89e5, #d5491ae1); /* Farbverlauf */
-    -webkit-background-clip: text; /* Anwendung des Farbverlaufs auf den Text */
-    color: transparent; /* Macht den Text transparent, sodass der Farbverlauf sichtbar wird */
-    animation: hue 10s infinite linear; /* Animation für den "Atmungseffekt" */
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.501); /* Textschatten für einen leuchtenden Effekt */
-}
-
-/* Keyframes für die Animation */
-@keyframes hue {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-}
-
-
-
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #e17453, #ab4c4c, #b3955e, #419884);
-    background-size: 400% 400%;
-    animation: gradientBackground 17s ease infinite;
+    background-color: #686890;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,14 +15,14 @@ body {
 }
 
 .app-container {
-    width: 90vh; /* Breite des Hauptcontainers */
-    max-width: 600vh; /* Maximale Breite */
+    width: 150%; /* Breite des Hauptcontainers */
+    max-width: 800px; /* Maximale Breite */
     padding: 20px;
     margin: 10px;
-    background-color: rgba(255,255,255, 0.31); /* Hintergrundfarbe des Containers */
-    border-radius: 30px; /* Abgerundete Ecken */
+    background-color: (255,255,255, 1); /* Hintergrundfarbe des Containers */
+    border-radius: 10px; /* Abgerundete Ecken */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
-    min-height: 30vh;
+    min-height: 600px;
 }
 
 h1 {
@@ -67,8 +35,6 @@ h1 {
 h1:hover {
     transform: scale(1.05);
 }
-
-.data-fetch-section
 
 .input-button-container {
     display: flex;
@@ -88,20 +54,20 @@ input[type="text"], button {
 
 input[type="text"] {
     background-color: #25254c;
-    width: 82%;
     color: #dedede;
+    width: calc(100% - 42px - 100px);
     box-shadow: none;
 }
 
 input[type="text"]:focus {
     background-color: #35358c;
-    color: #ffffff;
+    color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 button {
     background-color: #25254c;
-    color: #dededeec;
+    color: #dedede;
     padding: 15px 30px; /* Größeres Padding für größere Buttons */
     margin: 1px 0;
     border: none;
@@ -114,7 +80,7 @@ button {
 
 button:hover {
     background-color: #35358c;
-    color: #ffffff;
+    color: #fff;
     transform: scale(1.05);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -125,9 +91,8 @@ ul {
 }
 
 li {
-    background-color: #eae5f990;
+    background-color: #eae5f9;
     margin: 10px 0;
-    width: 98%;
     border-radius: 40px;
     display: flex;
     align-items: center;
@@ -135,18 +100,6 @@ li {
     padding: 5px 20px; /* Hinzugefügt für Innenabstand */
     transition: background-color 0.3s;
 }
-
-.reset-button {
-    background-color: #cc1111b1; /* Rote Farbe */
-    color: #ffffff; /* Weiße Textfarbe für Kontrast */
-    /* Weitere gewünschte Stile hinzufügen */
-}
-
-.reset-button:hover {
-    background-color: #e60000e6; /* Dunklere rote Farbe beim Hover */
-    /* Weitere Hover-Effekte hinzufügen */
-}
-
 
 .zeitstempel {
     margin-left: auto;
@@ -156,48 +109,4 @@ li {
 button {
     padding: 12px 17px; /* Größere Schaltflächen */
     font-size: 0.8em; /* Kleinere Schriftgröße für die Schaltflächen */
-}
-
-.data-fetch-section {
-    background-color: rgba(255, 255, 255, 0.141); /* Weiß mit Transparenz */
-    border-radius: 15px; /* Abgerundete Ecken */
-    padding: 20px; /* Innenabstand */
-    margin-top: 20px; /* Abstand nach oben */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.465); /* Leichter Schatten für Tiefe */
-}
-
-
-.data-fetch-section #user {
-    display: block; /* Elemente untereinander */
-    width: 100%; /* Volle Breite innerhalb des Containers */
-    margin-bottom: 10px; /* Abstand zwischen den Elementen */
-}
-
-
-.data-fetch-section #button {
-    cursor: pointer; /* Mauszeiger als Hand-Symbol */
-    background-color: #25254c; /* Blaue Farbe für den Button */
-    color: rgba(255, 255, 255, 0.821); /* Weiße Textfarbe */
-    border: none; /* Kein Rand */
-    padding: 10px; /* Polsterung */
-    border-radius: 30px; /* Abgerundete Ecken für den Button */
-}
-
-.data-fetch-section # result {
-    background-color: #bbbbe6b7; /* Hintergrundfarbe für das Ergebnisfeld */
-    width: 45%;
-    margin-top: 8px;
-    padding: 10px; /* Polsterung */
-    height: 110px; /* Feste Höhe */
-    overflow-y: auto; /* Automatisches Scrollen bei zu viel Inhalt */
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(3, 3, 3, 0.177); /* Leichter Schatten für Tiefe */
-}
-
-/* Stile für die Eingabefelder */
-.data-fetch-section input[type="text"] {
-    width: 45%; /* Reduziere die Breite der Eingabefelder */
-    padding: 10px 15px; /* Reduziere das Padding innerhalb der Eingabefelder */
-    font-size: 0.9em; /* Optional: Reduziere die Schriftgröße */
-    /* ... weitere Stile ... */
 }

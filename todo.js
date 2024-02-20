@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
-    // Event Listener für den "Daten abrufen"-Button
-    document.getElementById('fetchData').addEventListener('click', datenAbrufen);
-
     aufgabenLaden();
 });
 
